@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Tashfiq | Education</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>My Education</h1>
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="about.html">About</a> | 
-            <a href="projects.html">Projects</a> | 
-            <a href="education.html">Education</a> | 
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <main>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <h2>Academic Details</h2>
-            <p><b>Department:</b> Electrical and Computer Engineering (ECE)</p>
-            <p><b>Major:</b> Computer Science and Engineering (CSE)</p>
-            <p><b>Student ID:</b> 2221080642</p>
-            
-            <hr>
-            
+            <a class="navbar-brand fw-bold text-info" href="index.html">Tashfiq Portfolio</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="projects.html">Projects</a>
+                <a class="nav-link active" href="education.html">Education</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="alert alert-primary shadow-sm" role="alert"> Academic background and technical audio intro.
+        </div>
+        
+        <table class="table table-striped table-hover shadow-sm bg-white"> <thead class="table-dark">
+                <tr>
+                    <th>Field</th>
+                    <th>Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Department</td><td>Electrical and Computer Engineering (ECE)</td></tr>
+                <tr><td>Major</td><td>Computer Science and Engineering (CSE)</td></tr>
+                <tr><td>Status</td><td>Undergraduate</td></tr>
+            </tbody>
+        </table>
+
+        <div class="mt-5 text-center p-4 bg-white border rounded">
             <h3>Audio Introduction</h3>
-            <p>Listen to a brief introduction about my academic background:</p>
-            <audio controls>
+            <audio controls class="mt-2">
                 <source src="intro.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
             </audio>
         </div>
     </main>
