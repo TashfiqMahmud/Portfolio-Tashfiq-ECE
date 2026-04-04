@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    overflow-x: hidden;
 }
 
 header {
@@ -19,24 +20,63 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: white;
+    transform: translateY(-2px);
 }
 
 main {
     padding: 20px;
 }
-.container {
+
+.container-custom {
     background-color: white;
-    width: 70%;
+    width: 90%;
+    max-width: 1100px;
     margin: 20px auto;
-    padding: 30px;
+    padding: 20px;
     border: 1px solid #ddd;
     border-top: 10px solid #2c3e50;
     text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+}
+
+img, video {
+    border: 5px solid #eee;
+    margin: 15px 0;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 h2 {
@@ -46,9 +86,17 @@ h2 {
     padding-bottom: 5px;
 }
 
-img, video {
-    border: 5px solid #eee;
-    margin: 15px 0;
+@media (min-width: 768px) {
+    .container-custom {
+        width: 70%;
+        padding: 40px;
+    }
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    transition: all 0.3s ease-in-out;
 }
 
 footer {
