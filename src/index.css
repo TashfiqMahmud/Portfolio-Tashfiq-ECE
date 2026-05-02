@@ -1,0 +1,278 @@
+:root {
+  --accent: #3498db;
+  --light-bg: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --text-muted: #6c757d;
+  --nav-bg: #2c3e50;
+  --bio-bg: #f8f9fa;
+  --btn-border: #2c3e50;
+  --btn-text: #2c3e50;
+  --btn-hover-bg: #2c3e50;
+  --btn-hover-text: #ffffff;
+  --transition: 0.3s ease;
+  --border-color: #dee2e6;
+  --table-stripe: #f2f2f2;
+  --input-bg: #ffffff;
+  --input-color: #333333;
+  --input-border: #ced4da;
+  --error-color: #dc3545;
+}
+ 
+/* Dark theme overrides */
+body.theme-dark {
+  --light-bg: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --text-muted: #bbbbbb;
+  --nav-bg: #000000;
+  --bio-bg: #2d2d2d;
+  --btn-border: #ffffff;
+  --btn-text: #ffffff;
+  --btn-hover-bg: #ffffff;
+  --btn-hover-text: #000000;
+  --border-color: #444;
+  --table-stripe: #2a2a2a;
+  --input-bg: #2d2d2d;
+  --input-color: #e0e0e0;
+  --input-border: #555;
+}
+ 
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  background-color: var(--light-bg);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color var(--transition), color var(--transition);
+}
+ 
+/* ── Navbar ── */
+.portfolio-nav {
+  background-color: var(--nav-bg) !important;
+  transition: background-color var(--transition);
+}
+ 
+.portfolio-nav .nav-link {
+  color: #fff !important;
+  opacity: 0.8;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  transition: opacity 0.2s;
+}
+ 
+.portfolio-nav .nav-link:hover,
+.portfolio-nav .nav-link.active {
+  opacity: 1;
+  border-bottom: 2px solid var(--accent);
+}
+ 
+.portfolio-nav .navbar-brand {
+  color: #fff !important;
+}
+ 
+/* ── Profile / Generic Card ── */
+.profile-card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  border: none;
+  transition: transform 0.3s ease, background-color var(--transition);
+}
+ 
+.profile-card:hover {
+  transform: translateY(-3px);
+}
+ 
+/* ── Bio Box ── */
+.bio-box {
+  background-color: var(--bio-bg);
+  color: var(--text-color);
+  border-left: 4px solid var(--accent);
+  transition: background-color var(--transition), color var(--transition);
+}
+ 
+/* ── Custom Badge ── */
+.custom-badge {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+ 
+/* ── Toggle Bio Button ── */
+.btn-toggle-bio {
+  border: 2px solid var(--btn-border) !important;
+  color: var(--btn-text) !important;
+  background: transparent !important;
+  font-weight: 600;
+  padding: 0.375rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+}
+ 
+.btn-toggle-bio:hover,
+.btn-toggle-bio.active-state {
+  background-color: var(--btn-hover-bg) !important;
+  color: var(--btn-hover-text) !important;
+}
+ 
+/* ── Theme feedback toast ── */
+.theme-feedback {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  z-index: 1100;
+  font-size: 0.85rem;
+  animation: fadeInUp 0.3s ease forwards;
+}
+ 
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+.animate-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+ 
+.animate-fade {
+  animation: fadeInUp 0.6s ease forwards;
+}
+ 
+/* ── Section wrapper ── */
+.container-custom {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: background-color var(--transition);
+}
+ 
+/* ── Alert / Status ── */
+.status-success {
+  background: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+  border-radius: 8px;
+  padding: 1rem;
+}
+ 
+.status-error {
+  background: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+  border-radius: 8px;
+  padding: 1rem;
+}
+ 
+/* ── Form ── */
+.form-control-themed {
+  background-color: var(--input-bg) !important;
+  color: var(--input-color) !important;
+  border-color: var(--input-border) !important;
+  transition: background-color var(--transition), color var(--transition);
+}
+ 
+.form-control-themed::placeholder {
+  color: var(--text-muted);
+}
+ 
+.form-control-themed:focus {
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+  border-color: var(--accent) !important;
+}
+ 
+.form-control-themed.is-invalid {
+  border-color: var(--error-color) !important;
+}
+ 
+.error-msg {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  min-height: 1.1rem;
+  margin-top: 0.25rem;
+}
+ 
+/* ── Table dark-mode ── */
+.table-themed {
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+ 
+.table-themed tbody tr:nth-child(odd) {
+  background-color: var(--table-stripe);
+}
+ 
+/* ── Projects card grid ── */
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color var(--transition);
+}
+ 
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+ 
+.project-card .card-title {
+  color: var(--text-color);
+}
+ 
+.project-card .card-text {
+  color: var(--text-muted);
+}
+ 
+/* ── Accent text ── */
+.accent-text {
+  color: var(--accent) !important;
+}
+ 
+/* ── Education timeline ── */
+.edu-timeline-item {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+ 
+.edu-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+ 
+/* ── Audio player themed ── */
+audio {
+  filter: invert(0);
+  transition: filter var(--transition);
+}
+ 
+body.theme-dark audio {
+  filter: invert(1) hue-rotate(180deg);
+}
+ 
